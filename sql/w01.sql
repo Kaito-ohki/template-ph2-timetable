@@ -3,14 +3,19 @@
 -- 曜日（day）は数字のまま返してよい
 
 -- 区画1：月曜日の授業（時限の早い順）
-
-
+SELECT period, name, teacher, room FROM courses
+WHERE day = 1
+ORDER BY period ASC;
 -- 区画2：必修科目（科目コードの順）
-
-
+SELECT name, credits
+FROM courses
+WHERE required
+ORDER BY code ASC;
 -- 区画3：3限以降の2単位の授業（曜日→時限の順）
-
-
+SELECT day, period, name
+FROM courses
+WHERE period>=3
+ORDER BY day, period ASC;
 -- 区画4：演習の授業（科目コードの順）
 
 
